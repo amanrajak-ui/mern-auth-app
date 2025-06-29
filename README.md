@@ -1,116 +1,108 @@
-project:
-  title: "🔐 MERN Authentication App"
-  description: >
-    A full-stack authentication system built using MongoDB, Express, React, and Node.js.
-    It allows users to register, log in, and access a protected profile page using JWT-based authentication.
-    All passwords are securely hashed using bcrypt, and routes are protected via middleware.
+📁 project:
+  🔐 title: "**MERN Authentication App**"
+  📄 description: >
+    A full-stack authentication system built using **MongoDB**, **Express**, **React**, and **Node.js**.
+    It allows users to register, log in, and access a protected profile page using **JWT-based authentication**.
+    All passwords are securely hashed using **bcrypt**, and routes are protected via middleware.
 
-features:
-  - "📝 User Registration"
-  - "🔑 Secure Login with JWT"
-  - "🔒 Protected Profile Page"
-  - "🚀 MongoDB for storing user credentials"
-  - "⚛️ React frontend with Axios for API interaction"
-  - "🔐 Password hashing with bcrypt"
-  - "🧠 Middleware to protect private routes"
-  - "📦 Modular folder structure"
-
-screenshots:
-  - register.png
-    ![Screenshot (137)](https://github.com/user-attachments/assets/6bfaf617-0215-44f9-beda-dfd87a601175)
-
-  - login.png
-   ![Screenshot (136)](https://github.com/user-attachments/assets/3a7ab84e-7cea-4cba-a38a-719c57f8e2db)
-
-  - profile.png
-    ![Screenshot (135)](https://github.com/user-attachments/assets/42a86edc-a868-435d-916c-06c5b6fc45eb)
-
+🚀 features:
+  - 📝 **User Registration**
+  - 🔑 **Secure Login with JWT**
+  - 🔒 **Protected Profile Page**
+  - 💾 **MongoDB for storing user credentials**
+  - ⚛️ **React frontend with Axios**
+  - 🔐 **Password hashing with bcrypt**
+  - 🧠 **Middleware for protected routes**
+  - 📦 **Clean & Modular folder structure**
     
+🖼️ screenshots:
+  - 🖼️ register.png
+  - ![Screenshot (137)](https://github.com/user-attachments/assets/79ab8550-665d-4017-9b42-ce3ab2ed4c34)
 
-structure:
+  - 🖼️ login.png
+  - ![Screenshot (136)](https://github.com/user-attachments/assets/f9cd9393-2959-4a9a-99fc-ce399342506c)
+
+  - 🖼️ profile.png
+
+  - ![Screenshot (135)](https://github.com/user-attachments/assets/ba408d24-9a98-4e6d-8331-6639cf412dd1)
+
+📦 structure:
   backend:
     - path: backend/config/db.js
-      description: MongoDB connection config
+      📘: MongoDB connection
     - path: backend/controllers/authController.js
-      description: Logic for register, login, profile
+      📘: Auth logic (register/login/profile)
     - path: backend/middleware/authMiddleware.js
-      description: JWT verification middleware
+      📘: JWT middleware
     - path: backend/models/User.js
-      description: Mongoose schema for User
+      📘: Mongoose user schema
     - path: backend/routes/authRoutes.js
-      description: Auth route definitions
+      📘: Auth route definitions
     - path: backend/server.js
-      description: Backend entry point
+      📘: Entry point
     - path: backend/.env
-      description: Environment variables
+      🔐: Env secrets (JWT, Mongo URI)
+
   frontend:
     - path: frontend/src/components/Navbar.js
-      description: Navbar component
+      📘: Navigation component
     - path: frontend/src/pages/Register.js
-      description: Registration page
+      📘: Registration UI
     - path: frontend/src/pages/Login.js
-      description: Login page
+      📘: Login UI
     - path: frontend/src/pages/Profile.js
-      description: Profile page
+      📘: Protected Profile Page
     - path: frontend/src/App.js
-      description: Route setup
+      📘: Route Configuration
     - path: frontend/src/api.js
-      description: Axios base config
+      🌐: Axios config
     - path: frontend/.env
-      description: Frontend environment file
+      🔐: API Base URL
 
-setup:
+🛠️ setup:
   clone:
-    - command: git clone https://github.com/<your-username>/mern-auth-app.git
-    - command: cd mern-auth-app
+    - 📥 git clone https://github.com/<your-username>/mern-auth-app.git
+    - 📂 cd mern-auth-app
+
   backend:
-    - command: cd backend
-    - command: npm install
-    - env:
+    - 📁 cd backend
+    - 📦 npm install
+    - 🔐 .env:
         PORT: 5000
-        MONGO_URI: your_mongodb_connection_string
-        JWT_SECRET: your_jwt_secret
-    - command: npm run dev
+        MONGO_URI: mongodb+srv://...
+        JWT_SECRET: your_secret_key
+    - ▶️ npm run dev
+
   frontend:
-    - command: cd ../frontend
-    - command: npm install
-    - command: npm start
-    - optional_env:
+    - 📁 cd ../frontend
+    - 📦 npm install
+    - ▶️ npm start
+    - 🌐 optional_env:
         REACT_APP_API_BASE: http://localhost:5000
 
-authentication_flow:
-  - "User registers and details are stored in MongoDB (password hashed)"
-  - "User logs in and receives JWT"
-  - "Token saved in localStorage"
-  - "Protected routes checked using middleware"
-  - "Access allowed only if valid token is present"
+🔐 authentication_flow:
+  - 👤 Register user → hashed & saved in MongoDB
+  - 🔑 Login user → get JWT
+  - 💾 Save token in localStorage
+  - 🧠 Middleware validates token
+  - ✅ Access profile page
 
-api_endpoints:
-  - method: POST
-    route: /api/register
-    description: User Registration
-  - method: POST
-    route: /api/login
-    description: Login and JWT Token
-  - method: GET
-    route: /api/profile
-    description: Get profile (protected)
+📮 api_endpoints:
+  - POST /api/register → User registration
+  - POST /api/login → Login + JWT
+  - GET /api/profile → Protected profile route
 
+🛠️ future_features:
+  - 🔁 Forgot Password / Reset Email
+  - 📧 Email Verification
+  - 🔐 OAuth Login (Google / GitHub)
+  - 🎨 Tailwind-based UI
+  - 🧪 Unit + Integration Testing (Jest, Cypress)
 
-
-future_features:
-  - Forgot password / reset
-  - Email verification
-  - OAuth login (Google/Facebook)
-  - UI redesign with Tailwind
-  - Testing with Jest or Cypress
-
-author:
-  name: Aman Kumar Rajak
+👨‍💻 author:
+  name: "**Aman Kumar Rajak**"
   email: akrajak151@gmail.com
   github: https://github.com/amanrajak-ui
   linkedin: https://www.linkedin.com/in/aman-kumar-rajak-69051326a
 
-license:
-  type: MIT
-  file: LICENSE
+
